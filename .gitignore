@@ -1,3 +1,2 @@
 /functions/node_modules/
 *.local
-/functions/src/config/serviceAccountKey.json
