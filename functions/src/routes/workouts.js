@@ -23,7 +23,9 @@ const {
     getObliqueWorkout,
     getAdductorsWorkout,
     getQuadricepsWorkout,
-    saveUserWorkout,
+    getUserWorkout,
+    getUserWorkouts,
+    addUserWorkout,
     deleteUserWorkout
 } = require('../controllers/workoutsController');
 //----------------------------------------------------------------------//
@@ -34,7 +36,7 @@ router.get('/chest-day', getChestDayWorkout);
 router.get('/leg-day', getLegDayWorkout);
 router.get('/back-day', getBackDayWorkout);
 router.get('/arm-day', getArmDayWorkout);
-router.post('/save', saveUserWorkout);
+
 
 // Routes for each muscle group
 router.get('/forearms', getForearmsWorkout);
@@ -55,7 +57,11 @@ router.get('/oblique', getObliqueWorkout);
 router.get('/adductors', getAdductorsWorkout);
 router.get('/quadriceps', getQuadricepsWorkout);
 //----------------------------------------------------------------------//
+
 // DELETE route: Delete a specific user workout by workoutId
-router.delete('/user/:userId/workout/:workoutId', deleteUserWorkout);
+router.post('/user/:userId/workouts', addUserWorkout);
+router.delete('/user/:userId/workouts/:workoutId', deleteUserWorkout);
+router.get('/user/:userId/workouts/:workoutId', getUserWorkout);
+router.get('/user/:userId/workouts', getUserWorkouts);
 
 module.exports = router;
