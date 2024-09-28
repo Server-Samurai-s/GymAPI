@@ -1,7 +1,7 @@
 // src/controllers/workoutsController.js
 const { db } = require('../config/firebase');
-
-// Get predefined chest workout
+//----------------------------------------------------------------------//
+// Chest workout
 const getChestDayWorkout = async (req, res) => {
     const chestWorkout = {
         exercise1: { name: "Bench Press", sets: 4, reps: 8 },
@@ -40,6 +40,145 @@ const getArmDayWorkout = async (req, res) => {
     };
     res.json(armWorkout);
 };
+//----------------------------------------------------------------------//
+//----------------------------------------------------------------------//
+//----------------------Muscle Group Workouts---------------------------/
+// Forearms Workout
+const getForearmsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Wrist Curl", sets: 4, reps: 12 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Biceps Workout
+const getBicepsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Bicep Curl", sets: 4, reps: 10 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Triceps Workout
+const getTricepsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Tricep Extension", sets: 4, reps: 12 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Deltoids Workout
+const getDeltoidsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Shoulder Press", sets: 4, reps: 10 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Pectorals Workout
+const getPectoralsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Bench Press", sets: 4, reps: 8 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Rotator Cuff Workout
+const getRotatorCuffWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Internal Rotation", sets: 3, reps: 15 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Upper Back Workout
+const getUpperBackWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Pull-Up", sets: 4, reps: 8 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Trapezius Workout
+const getTrapeziusWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Shrugs", sets: 4, reps: 12 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Paravertebrals Workout
+const getParavertebralsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Back Extension", sets: 3, reps: 12 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Lower Back Workout
+const getLowerBackWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Deadlift", sets: 4, reps: 6 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Gluteus Workout
+const getGluteusWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Hip Thrust", sets: 4, reps: 10 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Hamstrings Workout
+const getHamstringsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Leg Curl", sets: 4, reps: 12 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Calves Workout
+const getCalvesWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Calf Raise", sets: 4, reps: 15 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Abdominals Workout
+const getAbdominalsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Crunches", sets: 4, reps: 20 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Oblique Workout
+const getObliqueWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Side Plank", sets: 3, reps: 30 } // seconds
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
+// Adductors Workout
+const getAdductorsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Adductor Machine", sets: 4, reps: 12 }
+    };
+    res.json(workout);
+};
+
+// Quadriceps Workout
+const getQuadricepsWorkout = async (req, res) => {
+    const workout = {
+        exercise: { name: "Leg Press", sets: 4, reps: 10 }
+    };
+    res.json(workout);
+};
+//----------------------------------------------------------------------//
 //----------------------------------------------------------------------//
 // Save custom workout to Firestore
 const saveUserWorkout = async (req, res) => {
@@ -83,7 +222,24 @@ module.exports = {
     getChestDayWorkout, 
     getLegDayWorkout, 
     getBackDayWorkout, 
-    getArmDayWorkout, 
+    getArmDayWorkout,
+    getForearmsWorkout,
+    getBicepsWorkout,
+    getTricepsWorkout,
+    getDeltoidsWorkout,
+    getPectoralsWorkout,
+    getRotatorCuffWorkout,
+    getUpperBackWorkout,
+    getTrapeziusWorkout,
+    getParavertebralsWorkout,
+    getLowerBackWorkout,
+    getGluteusWorkout,
+    getHamstringsWorkout,
+    getCalvesWorkout,
+    getAbdominalsWorkout,
+    getObliqueWorkout,
+    getAdductorsWorkout,
+    getQuadricepsWorkout,
     saveUserWorkout,
     deleteUserWorkout
 };
